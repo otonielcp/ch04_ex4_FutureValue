@@ -22,21 +22,22 @@ public class FutureValueApp {
 
                     System.out.print(nf.format(rate / 100) + "\t\t");
                 }
-                nf = NumberFormat.getCurrencyInstance();
+                nf = NumberFormat.getCurrencyInstance();  // the
                 System.out.println();
                 for (int i = 1; i <= years; i++) {
                     System.out.print(i + "\t");
-                    //investment=monthlyInvestment*12;
+                    // the for loop below will print the future value for each year
                     for (double rate = 5.0; rate <= 6.5; rate = rate + 0.5) {
                         futureValue = 0;
+                        // calculate the future value for each year
                         for (int j = 1; j <= i * 12; j++) {
                             futureValue = (futureValue + monthlyInvestment)
                                     * (1 + rate / 1200);
                         }
 
-                        System.out.print(nf.format(futureValue) + "\t");
+                        System.out.print(nf.format(futureValue) + "\t"); // the future value is printed
                     }
-                    System.out.println();
+                    System.out.println(); // the next year is printed
 
                 }
 
